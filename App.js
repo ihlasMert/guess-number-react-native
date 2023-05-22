@@ -8,11 +8,12 @@ export default function App() {
 
   function pickedNumberHandler(pickedNumber) {
     setUserNumber(pickedNumber);
+  }
 
-    let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
-    if (userNumber) {
-      screen = <GameScreen />;
-    }
+  let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
+
+  if (userNumber) {
+    screen = <GameScreen />;
   }
   return (
     <View style={styles.rootScreen}>
@@ -23,7 +24,6 @@ export default function App() {
         imageStyle={styles.backgroundColor}
       >
         {screen}
-        <StartGameScreen />
       </ImageBackground>
     </View>
   );
